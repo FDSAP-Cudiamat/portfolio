@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Arjay Cudiamat — Full-Stack Software Developer specializing in Flutter, Dart, Golang, and PostgreSQL.">
+  <meta name="theme-color" content="#0b1728">
+  <title>Arjay Cudiamat | Full-Stack Software Developer</title>
+  <style>
+    :root{--navy:#0b1728;--navy2:#10243a;--teal:#16b6ad;--cyan:#8ce4df;--ink:#172b3a;--muted:#647586;--paper:#f4f7fa;--line:#dce5ec;--white:#fff;--shadow:0 18px 48px rgba(11,23,40,.09)}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth;scroll-padding-top:90px}
+    body{margin:0;font:16px/1.7 Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Arial,sans-serif;color:var(--ink);background:var(--paper)}
+    a{color:inherit}
+    .wrap{width:min(1120px,91%);margin:auto}
+    .topbar{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.94);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+    .nav{min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .brand{font-weight:850;letter-spacing:.08em;color:var(--navy);font-size:.92rem;text-decoration:none}
+    .links{display:flex;gap:23px;align-items:center;flex-wrap:wrap}
+    .links a{text-decoration:none;color:#536475;font-size:.88rem;font-weight:650}
+    .links a:hover{color:#078e8c}
+    .hero{position:relative;overflow:hidden;background:radial-gradient(circle at 85% 20%,rgba(22,182,173,.22),transparent 27%),linear-gradient(125deg,#091526,#102b43 62%,#104c58);color:white;padding:92px 0 88px}
+    .hero:after{content:"";position:absolute;width:420px;height:420px;border:1px solid rgba(140,228,223,.13);border-radius:50%;right:-140px;bottom:-260px;box-shadow:0 0 0 48px rgba(140,228,223,.035),0 0 0 96px rgba(140,228,223,.025)}
+    .hero-inner{position:relative;z-index:1;max-width:850px}
+    .eyebrow{display:inline-flex;align-items:center;gap:9px;color:var(--cyan);text-transform:uppercase;letter-spacing:.16em;font-size:.76rem;font-weight:800}
+    .eyebrow:before{content:"";width:25px;height:2px;background:var(--teal)}
+    h1{font-size:clamp(2.7rem,7vw,5.25rem);line-height:1.02;letter-spacing:-.055em;margin:20px 0 17px}
+    h1 span{color:var(--cyan)}
+    .hero p{max-width:720px;color:#d2e1e9;font-size:1.12rem;margin:0}
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:29px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:12px 18px;border-radius:9px;text-decoration:none;font-weight:750;font-size:.92rem;transition:.2s ease}
+    .btn.primary{background:var(--teal);color:#06202a}
+    .btn.primary:hover{background:#5bd4cb;transform:translateY(-2px)}
+    .btn.outline{border:1px solid #71909e;color:white}
+    .btn.outline:hover{border-color:var(--cyan);color:var(--cyan)}
+    .quickfacts{display:flex;gap:28px;flex-wrap:wrap;margin-top:42px;color:#d1e0e8;font-size:.86rem}
+    .quickfacts strong{color:white;display:block;font-size:1.05rem}
+    main{padding-bottom:65px}
+    .section{padding:66px 0 10px}
+    .section-head{margin-bottom:24px}
+    .kicker{color:#078e8c;text-transform:uppercase;letter-spacing:.14em;font-weight:800;font-size:.72rem}
+    h2{font-size:clamp(1.65rem,3vw,2.2rem);line-height:1.2;letter-spacing:-.03em;color:var(--navy);margin:7px 0 10px}
+    .lead{color:var(--muted);max-width:820px;margin:0}
+    .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+    .grid.three{grid-template-columns:repeat(3,minmax(0,1fr))}
+    .card{background:var(--white);border:1px solid var(--line);border-radius:16px;padding:24px;box-shadow:var(--shadow)}
+    .card h3{color:var(--navy);font-size:1.06rem;margin:0 0 8px}
+    .card p{margin:0;color:var(--muted)}
+    .card ul{padding-left:19px;margin:10px 0 0;color:#526474}
+    .card li{padding:3px 0}
+    .profile-card{border-left:4px solid var(--teal)}
+    .skill-card{min-height:160px}
+    .skill-card .icon{display:grid;place-items:center;width:38px;height:38px;border-radius:10px;background:#e5f6f4;color:#087e80;font-weight:900;margin-bottom:14px}
+    .tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:13px}
+    .tag{display:inline-flex;padding:5px 10px;border:1px solid #d4e9e8;background:#eff9f8;color:#17666a;border-radius:999px;font-size:.78rem;font-weight:700}
+    .project-card{padding:0;overflow:hidden}
+    .project-top{padding:27px 28px;background:linear-gradient(120deg,#0e263b,#14505b);color:white}
+    .project-top .kicker{color:var(--cyan)}
+    .project-top h3{font-size:1.55rem;color:white;margin:8px 0}
+    .project-top p{color:#d4e5e9;max-width:800px}
+    .project-body{padding:25px 28px}
+    .project-body h4{margin:3px 0 8px;color:var(--navy)}
+    .project-body ul{margin-top:7px}
+    .note{padding:13px 15px;background:#f1f6f8;border:1px solid var(--line);border-radius:10px;color:#5b6b78;font-size:.88rem;margin-top:18px}
+    .timeline{display:grid;gap:14px}
+    .job{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:start}
+    .job h3{margin:0;color:var(--navy)}
+    .job .company{color:#078e8c;font-weight:700}
+    .job .date{font-size:.84rem;color:var(--muted);white-space:nowrap}
+    .credential{display:flex;align-items:center;justify-content:space-between;gap:18px}
+    .credential strong{color:var(--navy)}
+    .contact{background:linear-gradient(125deg,#0b1728,#123d4b);color:white;border-radius:18px;padding:34px}
+    .contact h2{color:white;margin-top:5px}
+    .contact p{color:#d1e0e8;max-width:680px}
+    .contact a{color:var(--cyan);font-weight:700}
+    .contact-details{display:flex;gap:22px;flex-wrap:wrap;margin-top:18px}
+    .contact-details a{text-decoration:none}
+    footer{border-top:1px solid var(--line);padding:24px 0 32px;color:var(--muted);font-size:.83rem}
+    @media(max-width:760px){.nav{padding:14px 0;align-items:flex-start;flex-direction:column;gap:9px}.links{gap:14px}.hero{padding:66px 0}.grid,.grid.three{grid-template-columns:1fr}.section{padding-top:48px}.quickfacts{gap:17px}.job{grid-template-columns:1fr}.job .date{white-space:normal}.contact{padding:25px}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap nav">
+      <a class="brand" href="#top">ARJAY CUDIAMAT</a>
+      <nav class="links" aria-label="Main navigation">
+        <a href="#about">About</a><a href="#skills">Skills</a><a href="#project">Project</a><a href="#experience">Experience</a><a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero" id="top">
+    <div class="wrap hero-inner">
+      <div class="eyebrow">Full-Stack Software Developer</div>
+      <h1>I build applications<br>from <span>front to back.</span></h1>
+      <p>I'm an Information Systems graduate and application developer working across Flutter/Dart mobile apps, Golang backend services, and PostgreSQL databases. I enjoy turning real business workflows into practical software.</p>
+      <div class="hero-actions">
+        <a class="btn primary" href="#project">Explore CA-GABAY <span aria-hidden="true">↗</span></a>
+        <a class="btn outline" href="mailto:seventeentv16@gmail.com">Contact me</a>
+      </div>
+      <div class="quickfacts">
+        <div><strong>Flutter & Dart</strong>Cross-platform mobile</div>
+        <div><strong>Golang</strong>Backend services & APIs</div>
+        <div><strong>PostgreSQL</strong>Relational database design</div>
+      </div>
+    </div>
+  </section>
+
+  <main class="wrap">
+    <section class="section" id="about">
+      <div class="section-head"><div class="kicker">About me</div><h2>Professional profile</h2>
+        <p class="lead">Full-stack software developer with 3+ years of professional application-development experience. I have taken mobile applications from development through release on Google Play and the Apple App Store. My work combines hands-on implementation with an understanding of user needs, business processes, and operational workflows.</p>
+      </div>
+      <div class="grid">
+        <article class="card profile-card">
+          <h3>What I bring</h3>
+          <ul>
+            <li>End-to-end application development across mobile, backend, and database layers</li>
+            <li>Flutter architecture, state management, and API integration</li>
+            <li>Golang services, RESTful APIs, and backend application logic</li>
+            <li>PostgreSQL schema design, relational data modeling, and data integrity</li>
+            <li>Business workflow analysis and communication with non-technical users</li>
+            <li>Mobile build, release, and deployment processes</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>Education & certification</h3>
+          <p><strong>Bachelor of Science in Information Systems</strong><br>CARD-MRI Development Institute, Bay<br>July 2019 – July 2023</p>
+          <p style="margin-top:15px"><strong>ITIL 4</strong><br>Professional certification</p>
+          <p style="margin-top:15px"><strong>Location</strong><br>Philippines · Open to remote opportunities</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="skills">
+      <div class="section-head"><div class="kicker">Technical toolkit</div><h2>Skills & technologies</h2>
+        <p class="lead">Core technologies and implementation areas used across my application-development work.</p>
+      </div>
+      <div class="grid three">
+        <article class="card skill-card"><div class="icon">FL</div><h3>Mobile development</h3><p>Cross-platform applications and responsive mobile interfaces.</p><div class="tags"><span class="tag">Flutter</span><span class="tag">Dart</span><span class="tag">Reusable UI</span></div></article>
+        <article class="card skill-card"><div class="icon">GO</div><h3>Backend development</h3><p>Backend application logic, API development, and service integration.</p><div class="tags"><span class="tag">Golang</span><span class="tag">REST APIs</span><span class="tag">HTTP</span><span class="tag">WebSocket</span></div></article>
+        <article class="card skill-card"><div class="icon">DB</div><h3>Database engineering</h3><p>Relational data structures, data modeling, and database integration.</p><div class="tags"><span class="tag">PostgreSQL</span><span class="tag">Schema design</span><span class="tag">JSONB</span><span class="tag">Data integrity</span></div></article>
+        <article class="card skill-card"><div class="icon">↔</div><h3>App architecture & integration</h3><p>Organizing app features and connecting mobile clients to backend services.</p><div class="tags"><span class="tag">Provider</span><span class="tag">ChangeNotifier</span><span class="tag">WebView</span><span class="tag">Token auth</span></div></article>
+        <article class="card skill-card"><div class="icon">▣</div><h3>Device & document features</h3><p>Mobile platform capabilities and document-oriented workflows.</p><div class="tags"><span class="tag">Camera / scanning</span><span class="tag">QR</span><span class="tag">Location</span><span class="tag">PDF</span><span class="tag">Printing</span></div></article>
+        <article class="card skill-card"><div class="icon">↗</div><h3>Tools & delivery</h3><p>Source control, collaboration, testing, and app store release processes.</p><div class="tags"><span class="tag">Git</span><span class="tag">GitHub</span><span class="tag">GitLab</span><span class="tag">Play Store</span><span class="tag">App Store</span></div></article>
+      </div>
+    </section>
+
+    <section class="section" id="project">
+      <div class="section-head"><div class="kicker">Selected work</div><h2>Featured project</h2>
+        <p class="lead">A full-stack application project demonstrating end-to-end ownership across the mobile frontend, backend services, and database layer.</p>
+      </div>
+      <article class="card project-card">
+        <div class="project-top">
+          <div class="kicker">Independent development · End-to-end ownership</div>
+          <h3>CA-GABAY V2 — Mobile Application</h3>
+          <p>I independently developed CA-GABAY from the ground up, including its Flutter/Dart mobile application, Golang backend, and PostgreSQL database design and integration.</p>
+          <div class="tags"><span class="tag">Flutter</span><span class="tag">Dart</span><span class="tag">Golang</span><span class="tag">PostgreSQL</span><span class="tag">REST API</span></div>
+        </div>
+        <div class="project-body">
+          <div class="grid">
+            <div><h4>My contributions</h4>
+              <ul>
+                <li>Designed and developed the mobile frontend, backend services, and database structure.</li>
+                <li>Created PostgreSQL schema and relational data model, including table relationships and backend integration.</li>
+                <li>Organized Flutter code using models, providers, services, feature screens, and shared utilities.</li>
+                <li>Implemented authentication and profile flows, including sign-in, registration, verification, and password recovery.</li>
+                <li>Built loan-related workflows, disclosures, signature flows, calculations, amortization, credit-line screens, and reports.</li>
+              </ul>
+            </div>
+            <div><h4>Integrations & delivery</h4>
+              <ul>
+                <li>Connected mobile workflows to backend APIs using token-based authentication.</li>
+                <li>Integrated WebView-based web features and HTTP service communication.</li>
+                <li>Worked with device features such as local authentication, camera/document scanning, QR scanning, location, and notifications.</li>
+                <li>Integrated PDF generation and printing workflows.</li>
+                <li>Supported app release and publication on Google Play and the Apple App Store.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="note"><strong>Confidentiality:</strong> The database schema, source code, internal endpoints, and business data are proprietary and are not displayed publicly. Technical details can be discussed at an appropriate level during an interview.</div>
+        </div>
+      </article>
+    </section>
+
+    <section class="section" id="experience">
+      <div class="section-head"><div class="kicker">Career history</div><h2>Professional experience</h2></div>
+      <div class="timeline">
+        <article class="card">
+          <div class="job"><div><h3>Application Developer 1</h3><div class="company">Bakawan Data Analytics Inc. · San Pablo City</div></div><div class="date">August 2023 – Present</div></div>
+          <ul>
+            <li>Develop and maintain full-stack applications using Golang, PostgreSQL, and Flutter/Dart.</li>
+            <li>Build backend components, RESTful APIs, concurrent services, and microservice-based functionality.</li>
+            <li>Work on PostgreSQL schema design, JSONB, query optimization, and data integrity.</li>
+            <li>Develop cross-platform mobile interfaces and integrate authentication and web-based features.</li>
+            <li>Manage mobile build, release, versioning, and deployment workflows.</li>
+          </ul>
+        </article>
+        <article class="card">
+          <div class="job"><div><h3>Account Officer</h3><div class="company">CARD Bank Inc. · San Pablo City</div></div><div class="date">August 2010 – August 2023</div></div>
+          <ul>
+            <li>Handled client loan-payment meetings, account follow-ups, and operational records.</li>
+            <li>Maintained loan inventories, monitored discrepancies, and coordinated payment concerns with clients and internal teams.</li>
+            <li>Developed practical understanding of financial workflows, customer service, and operational accountability.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="awareness">
+      <div class="section-head"><div class="kicker">Knowledge sharing</div><h2>Cybersecurity awareness</h2>
+        <p class="lead">I can help explain everyday cybersecurity practices in plain language for non-technical audiences. This is awareness education, not a claim of penetration-testing or specialist security-consulting experience.</p>
+      </div>
+      <div class="grid">
+        <article class="card"><h3>Awareness topics</h3><div class="tags"><span class="tag">Phishing & smishing</span><span class="tag">Social engineering</span><span class="tag">Password security</span><span class="tag">MFA</span><span class="tag">Safe links & attachments</span><span class="tag">Smartphone security</span><span class="tag">Malware awareness</span><span class="tag">Incident reporting</span></div></article>
+        <article class="card"><h3>Practical approach</h3><p>Plain-language explanations, workplace examples, short exercises, and actionable steps that help people recognize and report common risks.</p><p style="margin-top:12px"><strong>STOP · SECURE · REPORT</strong></p></article>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="contact">
+        <div class="kicker">Get in touch</div>
+        <h2>Let's build something useful.</h2>
+        <p>I'm open to remote opportunities in full-stack software development, Flutter/mobile development, and Golang backend development.</p>
+        <div class="contact-details">
+          <a href="mailto:seventeentv16@gmail.com">seventeentv16@gmail.com</a>
+          <a href="tel:+639120758278">+63 912 075 8278</a>
+          <span>Philippines</span>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer><div class="wrap">© 2026 Arjay Cudiamat · Full-Stack Software Developer</div></footer>
+</body>
+</html>
